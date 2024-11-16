@@ -1,32 +1,33 @@
-body{
+body {
     background-color: #f8f9fa;
     font-family: Arial, Helvetica, sans-serif;
     display: grid;
     grid-template-columns: [colstart] 1fr [colline1] 1fr [colline2] 1fr [colend];
     grid-template-rows: [start] 110px [line1] 720px [line2] 60px [end];
     gap: 20px;
-    grid-template-areas: 
-                "header header header"
-                "main main main"
-                "footer footer footer";            
+    grid-template-areas:
+        "header header header"
+        "main main main"
+        "footer footer footer";
 }
 
-header{
+header {
     grid-area: header;
     grid-column: colstart / colend;
     grid-row: start / line1;
 }
 
-h1{
+.title {
     font-size: 50px;
     color: white;
-    background: linear-gradient(#D1DAFF,#313E78);
+    background: linear-gradient(#D1DAFF, #313E78);
     margin: auto;
     padding-left: 30px;
-    
+
 }
 
-ul{
+.list {
+    list-style-type: none;
     display: flex;
     gap: 2em;
     height: 30px;
@@ -34,16 +35,13 @@ ul{
     align-items: center;
 }
 
-li::marker{
-    content: " ";
-}
 
-a{
+.list_link {
     display: inline-block;
     font-size: 20px;
     text-decoration: none;
     color: #1C2860;
-    background-color:#8190D4;
+    background-color: #8190D4;
     cursor: pointer;
     width: 110px;
     height: 30px;
@@ -52,40 +50,40 @@ a{
     transition: background-color 0.5s, color 0.5s, transform 0.5s;
 }
 
-a:hover{
+.list_link:hover {
     background-color: #E6C87F;
     color: #8C6C20;
     transform: scale(110%);
     transition: background-color 0.5s, color 0.5s, transform 0.5s;
 }
 
-a:active{
+.list_link:active {
     transform: scale(105%);
 }
 
-main{
+main {
     grid-area: main;
     grid-row: line1 / line2;
     grid-column: colstart / colend;
 }
 
-.intro{
+.intro {
     background-color: #313E78;
     color: white;
     text-align: center;
     padding: 3rem;
 }
 
-.intro::selection{
+.intro::selection {
     background-color: #B08D39;
     color: #E6D4A9;
 }
 
-h2{
-    font-size: 40px;    
+.heading {
+    font-size: 40px;
 }
 
-.content{
+.content {
     display: block;
     width: 30%;
     height: 320px;
@@ -97,7 +95,7 @@ h2{
     color: #1C2860;
 }
 
-footer{
+footer {
     grid-area: footer;
     grid-column: colstart / colend;
     grid-row: line2 / end;
@@ -107,7 +105,9 @@ footer{
     color: white;
 }
 
-footer::selection{
+
+
+footer::selection {
     background-color: #B08D39;
     color: #E6D4A9;
 }
