@@ -1,0 +1,113 @@
+body{
+    background-color: #f8f9fa;
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    grid-template-columns: [colstart] 1fr [colline1] 1fr [colline2] 1fr [colend];
+    grid-template-rows: [start] 110px [line1] 720px [line2] 60px [end];
+    gap: 20px;
+    grid-template-areas: 
+                "header header header"
+                "main main main"
+                "footer footer footer";            
+}
+
+header{
+    grid-area: header;
+    grid-column: colstart / colend;
+    grid-row: start / line1;
+}
+
+h1{
+    font-size: 50px;
+    color: white;
+    background: linear-gradient(#D1DAFF,#313E78);
+    margin: auto;
+    padding-left: 30px;
+    
+}
+
+ul{
+    display: flex;
+    gap: 2em;
+    height: 30px;
+    background-color: #1C2860;
+    align-items: center;
+}
+
+li::marker{
+    content: " ";
+}
+
+a{
+    display: inline-block;
+    font-size: 20px;
+    text-decoration: none;
+    color: #1C2860;
+    background-color:#8190D4;
+    cursor: pointer;
+    width: 110px;
+    height: 30px;
+    text-align: center;
+    padding-top: 5px;
+    transition: background-color 0.5s, color 0.5s, transform 0.5s;
+}
+
+a:hover{
+    background-color: #E6C87F;
+    color: #8C6C20;
+    transform: scale(110%);
+    transition: background-color 0.5s, color 0.5s, transform 0.5s;
+}
+
+a:active{
+    transform: scale(105%);
+}
+
+main{
+    grid-area: main;
+    grid-row: line1 / line2;
+    grid-column: colstart / colend;
+}
+
+.intro{
+    background-color: #313E78;
+    color: white;
+    text-align: center;
+    padding: 3rem;
+}
+
+.intro::selection{
+    background-color: #B08D39;
+    color: #E6D4A9;
+}
+
+h2{
+    font-size: 40px;    
+}
+
+.content{
+    display: block;
+    width: 30%;
+    height: 320px;
+    margin-top: 25px;
+    padding-top: 120px;
+    justify-self: center;
+    text-align: center;
+    box-shadow: 0px 0px 13px 3px rgba(86, 87, 133, 0.63);
+    color: #1C2860;
+}
+
+footer{
+    grid-area: footer;
+    grid-column: colstart / colend;
+    grid-row: line2 / end;
+    height: 100px;
+    padding-left: 10px;
+    background-color: #1C2860;
+    color: white;
+}
+
+footer::selection{
+    background-color: #B08D39;
+    color: #E6D4A9;
+}
